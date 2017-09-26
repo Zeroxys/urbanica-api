@@ -1,17 +1,7 @@
-const bodyParser = require('body-parser')
-const express = require('express')
-const app = express()
+const app = require('./app.js')
 const connection = require('./connection')
 const port = process.env.PORT || 8181
 
-// Routes
-const routes = require('./routes/routes.js')
-const webRoutes = require('./routes/web/routes.js')
-
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
-app.use('/', webRoutes)
-app.use('/api', routes)
 
 //Mongoose connection
 connection.then((db) => {
