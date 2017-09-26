@@ -1,16 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const Events = mongoose.model('Categories')
 
 const eventsSchema = new Schema({
-    key:Number,
-    img : String,
-    name : String,
-    stars: Number,
-    enter: String,
-    rate: String,
-    schedule : String,
-    review : String,
-    date : Date
+  name:String,
+  categorie : {
+      type: Schema.ObjectId,
+      ref: 'Categories'
+    }
 })
 
 module.exports = mongoose.model('events', eventsSchema)

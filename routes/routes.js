@@ -1,43 +1,44 @@
+const Events = require('../models/events.js')
+const Categories = require('../models/categories.js')
 const express = require('express')
 const router = express.Router()
-const Person = require('../models/events.js')
-const Categories = require('../models/categories.js')
 
-// ----> Models
-const person = new Person()
+function handleErr(err) {
+  console.log(err)
+  res.status(500).send({message : err.message})
+}
 
 // ----> Routes
-
 router.get('/', (req,res) => {
   res.status(200).send({contain:'Welcome to my api'})
 })
 
 router.post('/events', (req,res) => {
-  person.key = req.body.key
-  person.img = req.body.img
-  person.stars = req.body.stars
-  person.enter = req.body.enter
-  person.rate = req.body.rate
-  person.schedule = req.body.schedule
-  person.review = req.body.review
-  person.date = new Date()
 
-  const promise = person.save()
-  promise.then( ()=> {
+  let event = new Events()
 
+  event.name = req.body.name
+
+  event.save( (err) => {
+    if (err) return handleErr(err)
+    res.status(200).send({message : event})
   })
-  console.log(typeof person)
 })
 
 router.get('/events', (req,res) => {
-  Person.find((err, person) => {
+
+  Events.find((err, person) => {
     if(err) res.status(500).send({message: err})
     res.status(200).json(person)
   })
+
 })
 
 router.get('/categories', (req, res) => {
-  res.status(200).send({message : 'ok'})
+  Categories.find( (err, categorie) => {
+    if(err) res.status(500).send({message: err})
+    res.status(200).json(categorie)
+  }) 
 })
 
 router.post('/categories', (req, res) => {
