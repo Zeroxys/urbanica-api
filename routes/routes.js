@@ -5,6 +5,7 @@ const api = express.Router()
 const eventCtrl = require('../controllers/eventsCtrl.js')
 const categoriesCtrl = require('../controllers/categoriesCtrl.js')
 const placesCtrl = require('../controllers/placesCtrl.js')
+const usersCtrl = require('../controllers/usersCtrl.js')
 
 // ----> Routes for events
 api.get('/', eventCtrl.getWelcome)
@@ -18,5 +19,9 @@ api.post('/categories', categoriesCtrl.saveCategories)
 // ----> Routes for places
 api.get('/places', placesCtrl.getPlaces)
 api.post('/places', placesCtrl.savePlaces)
+
+// ----> Routes for users
+api.get('/users', usersCtrl.getUsers)
+api.post('/users', usersCtrl.saveUsers)
 
 module.exports = api

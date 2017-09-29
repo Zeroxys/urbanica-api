@@ -1,4 +1,5 @@
 const Events = require('../models/events.js')
+const conekta = require('../pays/config.js')
 
 function getWelcome(req, res) {
   res.status(200).send({message: 'bienvenido'})
@@ -9,7 +10,6 @@ function getEvents (req, res) {
   Events.find( {}, (err, event) => {
     res.status(200).send({event})
   })
-
 }
 
 function saveEvents (req, res) {
