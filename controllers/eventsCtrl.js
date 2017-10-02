@@ -15,11 +15,20 @@ function getEvents (req, res) {
 function saveEvents (req, res) {
   let event = new Events()
   
-  event.name = req.body.name
   event.img = req.body.img
+  event.name = req.body.name
+  event.stars = req.body.stars
+  event.enter = req.body.enter
+  event.rate = req.body.rate
+  event.schedule = req.body.schedule
+  event.review = req.body.review
+
 
   event.save( (err) => {
-    if (err) return console.log(err.message)
+    if (err) {
+      res.status(500).send({message : err.message}) 
+      return console.log(err.message) 
+    }
     res.status(200).send({message : event})
   })
 }
