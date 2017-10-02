@@ -8,7 +8,7 @@ connection.then((db) => {
   if(db) {
     app.listen(port,(err) => {
       if(err) return console.log(err)
-      console.log('connected')
+      console.log("connected on port " + port)
     })
   }
 }).catch((err) => {
