@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const eventsSchema = new Schema({  
-  key : {type: Number, default:0},
+  key : {type: Number},
   img: { type: String, required: true},
   name : {type: String, required: true},
   stars : {type: String, required : true},
