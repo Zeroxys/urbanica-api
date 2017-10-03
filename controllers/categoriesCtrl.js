@@ -16,11 +16,14 @@ function getCategories (req, res) {
 function saveCategories (req, res) {
   let categorie = new Categories()
   
+    categorie.key = req.body.key
     categorie.name = req.body.name
     categorie.events = req.body.id
 
     categorie.save( (err) => {
-      if(err) return console.log(err.message)  
+      if(err) {
+        res.status(500).send({ message : err.message})
+      }
       res.status(200).send({message: categorie})
     })
 }
