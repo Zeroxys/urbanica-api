@@ -10,7 +10,7 @@ module.exports = {
   entry : './website/index.js',
   output : {
     path : path.resolve(__dirname, 'dist'),
-    filename : 'paquetechidoliro.js'
+    filename : 'app.js'
   },
 
   module : {
@@ -31,7 +31,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -40,7 +40,7 @@ module.exports = {
       },
 
       {
-        test: /\.js$/,
+        test: /\.js/,
         use : [
           {
             loader : 'babel-loader',
