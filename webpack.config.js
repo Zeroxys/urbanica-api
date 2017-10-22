@@ -38,6 +38,17 @@ module.exports = {
           }
         ]
       },
+      
+      {test: /\.(svg|eot|wof|ttf|otf)/, use: [
+        {
+          loader : 'url-loader',
+          options : {
+            limit: 100000,
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
+      },
 
       {
         test: /\.js/,

@@ -8,14 +8,14 @@ export default class Navigation extends Component {
   render () {
     return (
       <nav className="nav">
-        <section>logo</section>
+        <section>URBANIK</section>
         <menu className="menu">
           <ul>
-            <li>Webservices</li>
-            <li>Blog</li>
-            <li>Contact</li>
-            <li>About</li>
-            <li>Tag</li>
+            <li><a href="#">Webservices</a></li>
+            <li><a href="#">Webservices</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Tag</a></li>
           </ul>
         </menu>
       </nav>

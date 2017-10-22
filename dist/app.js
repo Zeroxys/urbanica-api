@@ -967,6 +967,8 @@ __webpack_require__(16);
 
 __webpack_require__(17);
 
+__webpack_require__(35);
+
 /***/ }),
 /* 16 */
 /***/ (function(module, exports) {
@@ -1023,18 +1025,190 @@ var App = function (_Component) {
         null,
         _react2.default.createElement(_navigation2.default, null),
         _react2.default.createElement(
-          'section',
+          'div',
           { className: 'filter' },
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'banner' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'URBANIK'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'footer',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'footerContent' },
             _react2.default.createElement(
               'div',
-              { className: 'banner' },
+              { className: 'principalContent' },
               _react2.default.createElement(
-                'h1',
-                null,
-                'URBANIK'
+                'div',
+                { className: 'articulesContent' },
+                _react2.default.createElement(
+                  'section',
+                  { className: 'footSection' },
+                  _react2.default.createElement(
+                    'h3',
+                    { className: 'subtitles' },
+                    'Servicios'
+                  ),
+                  _react2.default.createElement(
+                    'ul',
+                    { className: 'references' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'section',
+                  { className: 'footSection' },
+                  _react2.default.createElement(
+                    'h3',
+                    { className: 'subtitles' },
+                    'Acerca de'
+                  ),
+                  _react2.default.createElement(
+                    'ul',
+                    { className: 'references' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Team'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'section',
+                  { className: 'footSection' },
+                  _react2.default.createElement(
+                    'h3',
+                    { className: 'subtitles' },
+                    'Talentos'
+                  ),
+                  _react2.default.createElement(
+                    'ul',
+                    { className: 'references' },
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'li',
+                      null,
+                      _react2.default.createElement(
+                        'a',
+                        { href: '#' },
+                        'Text'
+                      )
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'section',
+                  { className: 'newsletter' },
+                  _react2.default.createElement(
+                    'h3',
+                    { className: 'subtitles' },
+                    'Newsletter'
+                  ),
+                  _react2.default.createElement(
+                    'form',
+                    null,
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'newsContent' },
+                      _react2.default.createElement('input', { className: 'inputStyle', type: 'text' }),
+                      _react2.default.createElement(
+                        'button',
+                        { className: 'newsButton' },
+                        'Suscribirse'
+                      )
+                    )
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'ubication' },
+              _react2.default.createElement(
+                'div',
+                { className: 'ubicationContent' },
+                _react2.default.createElement(
+                  'section',
+                  null,
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    'Contact Us'
+                  )
+                )
               )
             )
           )
@@ -9670,7 +9844,7 @@ var Navigation = function (_Component) {
         _react2.default.createElement(
           "section",
           null,
-          "logo"
+          "URBANIK"
         ),
         _react2.default.createElement(
           "menu",
@@ -9681,27 +9855,47 @@ var Navigation = function (_Component) {
             _react2.default.createElement(
               "li",
               null,
-              "Webservices"
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "Webservices"
+              )
             ),
             _react2.default.createElement(
               "li",
               null,
-              "Blog"
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "Webservices"
+              )
             ),
             _react2.default.createElement(
               "li",
               null,
-              "Contact"
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "Contact"
+              )
             ),
             _react2.default.createElement(
               "li",
               null,
-              "About"
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "About"
+              )
             ),
             _react2.default.createElement(
               "li",
               null,
-              "Tag"
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "Tag"
+              )
             )
           )
         )
@@ -9713,6 +9907,12 @@ var Navigation = function (_Component) {
 }(_react.Component);
 
 exports.default = Navigation;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected character '@' (1:0)\nYou may need an appropriate loader to handle this file type.\n| @charset \"UTF-8\";\n| /*!\n|   Ionicons, v3.0.0-alpha.3");
 
 /***/ })
 /******/ ]);
