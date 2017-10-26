@@ -1026,14 +1026,18 @@ var App = function (_Component) {
         _react2.default.createElement(_navigation2.default, null),
         _react2.default.createElement(
           'div',
-          { className: 'filter' },
+          { className: 'banner' },
           _react2.default.createElement(
             'div',
-            { className: 'banner' },
+            { className: 'filter' },
             _react2.default.createElement(
-              'h1',
+              'div',
               null,
-              'URBANIK'
+              _react2.default.createElement(
+                'h1',
+                null,
+                'URBANIK'
+              )
             )
           )
         ),

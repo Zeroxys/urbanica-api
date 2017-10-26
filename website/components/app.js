@@ -11,9 +11,11 @@ export default class App extends Component {
     return (
       <div>
         <Navigation/>
-        <div className="filter">
-          <div className= "banner">
-            <h1>URBANIK</h1>
+        <div className="banner">
+          <div className= "filter">
+            <div>
+              <h1>URBANIK</h1>
+            </div>
           </div>
         </div>
 

@@ -55,7 +55,11 @@ nav
       
 
 .filter
-  background-color: #333333
+  background: rgba(34,31,31, 0.5)
+  width: 100%
+  height: 700px
+  display: flex
+  justify-content: center
 
 .banner
   display: flex
@@ -78,7 +82,6 @@ footer
   background-color : #221f1f
   height: 400px
   color : #00aadd
-  border:1px solid red
 
   .footerContent
     flex:1
@@ -139,16 +142,22 @@ footer
   font-size: 24px
 
 .newsletter
+  display:flex
+  flex-direction: column
   padding:20px
-  border:1px solid red
-  width: 280px  
+  width: 300px
   
   .newsContent
+    padding-top:15px
+    width: 300px
     display: flex
-    height: 30px
+    justify-content: center
+    align-items: center
+    height: 35px
     color: white
 
     .inputStyle
+      flex:1
       height : 30px
       color: #00aadd
 
