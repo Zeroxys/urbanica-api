@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -531,9 +531,9 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(32);
-} else {
   module.exports = __webpack_require__(33);
+} else {
+  module.exports = __webpack_require__(34);
 }
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
@@ -632,7 +632,7 @@ var warning = __webpack_require__(2);
 var canDefineProperty = __webpack_require__(13);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var REACT_ELEMENT_TYPE = __webpack_require__(25);
+var REACT_ELEMENT_TYPE = __webpack_require__(26);
 
 var RESERVED_PROPS = {
   key: true,
@@ -1821,6 +1821,48 @@ module.exports = ReactPropTypesSecret;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(35);
+} else {
+  module.exports = __webpack_require__(38);
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1896,7 +1938,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1969,7 +2011,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2012,7 +2054,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2042,7 +2084,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2085,7 +2127,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2110,7 +2152,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2352,7 +2394,7 @@ module.exports = ReactElementValidator;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2374,7 +2416,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2446,24 +2488,24 @@ var Banner = function (_Component) {
 exports.default = Banner;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(30);
-
 __webpack_require__(31);
 
+__webpack_require__(32);
+
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2479,7 +2521,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(34);
+var _reactDom = __webpack_require__(20);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -2487,7 +2529,7 @@ var _navigation = __webpack_require__(48);
 
 var _navigation2 = _interopRequireDefault(_navigation);
 
-var _banner = __webpack_require__(28);
+var _banner = __webpack_require__(29);
 
 var _banner2 = _interopRequireDefault(_banner);
 
@@ -2539,7 +2581,7 @@ exports.default = App;
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2669,7 +2711,7 @@ module.exports = { Children: { map: S.map, forEach: S.forEach, count: S.count, t
     } }, Component: B.Component, PureComponent: B.PureComponent, unstable_AsyncComponent: B.AsyncComponent, createElement: G.createElement, cloneElement: G.cloneElement, isValidElement: G.isValidElement, createFactory: G.createFactory, version: "16.0.0", __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: { ReactCurrentOwner: C, assign: f } };
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4372,48 +4414,6 @@ if (process.env.NODE_ENV !== "production") {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(35);
-} else {
-  module.exports = __webpack_require__(38);
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4434,13 +4434,13 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var aa = __webpack_require__(5);__webpack_require__(1);var l = __webpack_require__(12),
     n = __webpack_require__(4),
-    ba = __webpack_require__(20),
+    ba = __webpack_require__(21),
     ca = __webpack_require__(3),
     da = __webpack_require__(6),
-    ea = __webpack_require__(21),
-    fa = __webpack_require__(22),
-    ha = __webpack_require__(23),
-    ia = __webpack_require__(24);
+    ea = __webpack_require__(22),
+    fa = __webpack_require__(23),
+    ha = __webpack_require__(24),
+    ia = __webpack_require__(25);
 function w(a) {
   for (var b = arguments.length - 1, c = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, d = 0; d < b; d++) {
     c += "\x26args[]\x3d" + encodeURIComponent(arguments[d + 1]);
@@ -6884,7 +6884,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(5);var invariant=__webpack_require__(1);var ExecutionEnvironment=__webpack_require__(12);var _assign=__webpack_require__(4);var EventListener=__webpack_require__(20);var require$$0=__webpack_require__(2);var hyphenateStyleName=__webpack_require__(39);var emptyFunction=__webpack_require__(3);var camelizeStyleName=__webpack_require__(41);var performanceNow=__webpack_require__(43);var propTypes=__webpack_require__(45);var emptyObject=__webpack_require__(6);var checkPropTypes=__webpack_require__(10);var shallowEqual=__webpack_require__(21);var containsNode=__webpack_require__(22);var focusNode=__webpack_require__(23);var getActiveElement=__webpack_require__(24);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var react=__webpack_require__(5);var invariant=__webpack_require__(1);var ExecutionEnvironment=__webpack_require__(12);var _assign=__webpack_require__(4);var EventListener=__webpack_require__(21);var require$$0=__webpack_require__(2);var hyphenateStyleName=__webpack_require__(39);var emptyFunction=__webpack_require__(3);var camelizeStyleName=__webpack_require__(41);var performanceNow=__webpack_require__(43);var propTypes=__webpack_require__(45);var emptyObject=__webpack_require__(6);var checkPropTypes=__webpack_require__(10);var shallowEqual=__webpack_require__(22);var containsNode=__webpack_require__(23);var focusNode=__webpack_require__(24);var getActiveElement=__webpack_require__(25);/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -11131,10 +11131,6 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(34);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _reactIonicons = __webpack_require__(49);
 
 var _reactIonicons2 = _interopRequireDefault(_reactIonicons);
@@ -11153,13 +11149,26 @@ var Navigation = function (_Component) {
   function Navigation(props) {
     _classCallCheck(this, Navigation);
 
-    return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this));
+    var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this));
+
+    _this.state = {
+      iconShake: false
+    };
+    _this.Icon = _this.Icon.bind(_this);
+    return _this;
   }
 
   _createClass(Navigation, [{
+    key: 'Icon',
+    value: function Icon() {
+      this.setState({
+        iconShake: !this.state.iconShake
+      });
+      console.log(this.state.iconShake);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      console.log(_reactDom2.default);
       return _react2.default.createElement(
         'nav',
         { className: 'nav' },
@@ -11224,7 +11233,11 @@ var Navigation = function (_Component) {
               )
             )
           ),
-          _react2.default.createElement(_reactIonicons2.default, { className: 'burgerIcon', icon: 'ion-android-menu', color: '#ffffff', fontSize: '30px' })
+          _react2.default.createElement(
+            'div',
+            { onClick: this.Icon, className: 'iconContent' },
+            _react2.default.createElement(_reactIonicons2.default, { className: 'burgerIcon', shake: this.state.iconShake, icon: 'ion-android-menu', color: '#ffffff', fontSize: '30px' })
+          )
         )
       );
     }
@@ -11467,7 +11480,7 @@ var createFactory = ReactElement.createFactory;
 var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactElementValidator = __webpack_require__(26);
+  var ReactElementValidator = __webpack_require__(27);
   createElement = ReactElementValidator.createElement;
   createFactory = ReactElementValidator.createFactory;
   cloneElement = ReactElementValidator.cloneElement;
@@ -11861,7 +11874,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _prodInvariant = __webpack_require__(7);
 
 var ReactCurrentOwner = __webpack_require__(9);
-var REACT_ELEMENT_TYPE = __webpack_require__(25);
+var REACT_ELEMENT_TYPE = __webpack_require__(26);
 
 var getIteratorFn = __webpack_require__(14);
 var invariant = __webpack_require__(1);
@@ -12884,7 +12897,7 @@ var ReactElement = __webpack_require__(8);
  */
 var createDOMFactory = ReactElement.createFactory;
 if (process.env.NODE_ENV !== 'production') {
-  var ReactElementValidator = __webpack_require__(26);
+  var ReactElementValidator = __webpack_require__(27);
   createDOMFactory = ReactElementValidator.createFactory;
 }
 
@@ -13056,7 +13069,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _prodInvariant = __webpack_require__(7);
 
 var ReactPropTypeLocationNames = __webpack_require__(17);
-var ReactPropTypesSecret = __webpack_require__(27);
+var ReactPropTypesSecret = __webpack_require__(28);
 
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
@@ -13150,7 +13163,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 var ReactElement = __webpack_require__(8);
 var ReactPropTypeLocationNames = __webpack_require__(17);
-var ReactPropTypesSecret = __webpack_require__(27);
+var ReactPropTypesSecret = __webpack_require__(28);
 
 var emptyFunction = __webpack_require__(3);
 var getIteratorFn = __webpack_require__(14);
@@ -14534,7 +14547,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _banner = __webpack_require__(28);
+var _banner = __webpack_require__(29);
 
 var _banner2 = _interopRequireDefault(_banner);
 

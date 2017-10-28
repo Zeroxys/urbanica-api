@@ -77,14 +77,16 @@ nav .menu ul li a {
 nav .menu ul li a:hover {
   color: #0ad;
 }
-nav .menu .burgerIcon {
+nav .iconContent {
+  margin-right: 35px;
+}
+nav .iconContent .burgerIcon {
   display: none;
 }
 @media (max-width: 760px) {
-  nav .menu .burgerIcon {
+  nav .iconContent .burgerIcon {
     cursor: pointer;
     display: block;
-    padding-right: 35px;
   }
 }
 @media (max-width: 760px) {
@@ -104,7 +106,7 @@ nav .menu .burgerIcon {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: 5rem;
+  font-size: 2.8rem;
   font-family: Akrobat;
   background-image: url(822053cf64543d0abfaa7570d86cb75f.jpeg);
   background-size: cover;
