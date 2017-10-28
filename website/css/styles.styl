@@ -1,50 +1,44 @@
-html
-  padding: 0
-  margin : 0
-
-body
-  margin: 0
-  padding : 0
-  background : lightgrey
-  color : #ffffff
-
-@font-face
-  font-family: Akrobat
-  src: url('../fonts/Akrobat-Regular.otf')
-
-@font-face
-  font-family: Akrobat-bold
-  src: url('../fonts/Akrobat-Bold.otf')
-
-@font-face
-  font-family: Akrobat-extraBold
-  src: url('../fonts/Akrobat-ExtraBold.otf')
-
-@font-face
-  font-family: Akrobat-semi
-  src: url('../fonts/Akrobat-SemiBold.otf')      
+@import "fonts.styl"
 
 nav
   display: flex
-  height: 100px
+  height: 50px
   justify-content: space-around
   align-items: center
   background: #333333
 
+  .title
+    padding-left: 40px 
+    font-size: 1.8rem
+    font-family: Akrobat
+
+    @media (max-width: 760px)
+      padding-left: 40px
+
   .menu
     flex: 0 0 600px
     
+    @media (max-width: 760px)
+      flex:1
+      display:flex
+      flex-direction: column
+      justify-content: flex-end
+      align-items: flex-end
+
     ul 
       display: flex
       align-items: center
       flex: 1
       justify-content: space-around
 
+      @media (max-width: 760px)
+        display: none
+
       li 
         list-style: none
 
         a
-          font-size: 22px
+          font-size: 1rem
           color: white
           text-decoration: none
           transition: .7s
@@ -52,7 +46,18 @@ nav
 
         a:hover
           color: #00aadd
-      
+
+    .burgerIcon
+        display:none
+        @media (max-width: 760px)
+          cursor: pointer
+          display:block
+          padding-right: 35px
+
+  @media(max-width: 760px)
+    justify-content: flex-start
+    flex:1
+
 
 .filter
   background: rgba(34,31,31, 0.5)
@@ -65,7 +70,7 @@ nav
   display: flex
   justify-content: center
   align-items: flex-start
-  font-size: 60px
+  font-size: 5rem
   font-family: Akrobat
   background-image: url('../images/background.jpeg')
   background-size: cover
@@ -152,23 +157,37 @@ footer
     width: 300px
     display: flex
     justify-content: center
-    align-items: center
     height: 35px
     color: white
 
     .inputStyle
       flex:1
       height : 30px
-      color: #00aadd
+      color: #f60756
 
     .inputStyle:focus 
       outline : none
     
 
     .newsButton
-      height: 36px
+      height: 33px
       color: #ffffff
-      background-color : #00aadd
+      background-color : #f60756
+      box-shadow: 0 1px 0 #c30440, 0 2px 0 #c30440, 0 3px 0 #c30440
       border-style: none
       font-family: Akrobat-extraBold
       font-size: 18px
+      transition: .5s
+      outline:none
+
+    .newsButton:hover
+      cursor: pointer
+      background-color : #c30440
+
+
+.subscribeNewsletter
+  display: flex
+  float: right
+  width: 500px
+  height: 500px
+  background-color: lightgrey

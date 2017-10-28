@@ -23,7 +23,7 @@ module.exports = {
       },
 
       {
-        test: /\.styl/,
+        test: /\.css|.styl/,
         use : extractTextWebpackPlugin.extract({
           fallback: 'style-loader',
           use : ['css-loader', 'stylus-loader']
@@ -56,7 +56,7 @@ module.exports = {
           {
             loader : 'babel-loader',
             options : {
-              presets : ['env', 'react']
+              presets : ['es2015','stage-2','env','react']
             }
           }
         ]
