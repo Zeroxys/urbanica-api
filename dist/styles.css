@@ -186,12 +186,20 @@ footer .footerContent .principalContent .articulesContent .footSection ul li a {
 footer .footerContent .ubication {
   height: 200px;
   display: flex;
-  flex-direction: row;
   border: 1px solid #008000;
   padding: 0 100px 0 100px;
+  flex-direction: column;
 }
 footer .footerContent .ubication .ubicationContent {
-  border: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ff0;
+}
+footer .footerContent .ubication .iconsContent {
+  border: 3px solid #fff;
+}
+footer .footerContent .ubication .iconsContent .socialIcons {
+  border: 2px solid #f00;
 }
 .subtitles {
   padding: 0;
@@ -245,10 +253,6 @@ footer .footerContent .ubication .ubicationContent {
   width: 500px;
   height: 500px;
   background-color: #d3d3d3;
-}
-.socialIcons {
-  border: 1px solid #f00;
-  font-size: 100px;
 }
 /* Rotate animation */
 .rotate {

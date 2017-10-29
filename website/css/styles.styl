@@ -147,12 +147,20 @@ footer
     .ubication
       height: 200px
       display:flex
-      flex-direction: row
       border: 1px solid green
       padding : 0 100px 0 100px
+      flex-direction: column
 
       .ubicationContent
-        border:1px solid black           
+        display:flex
+        justify-content: space-between
+        border:1px solid yellow
+      
+      .iconsContent
+        border:3px solid white
+
+        .socialIcons
+          border:2px solid red
 
 .subtitles
   padding:0
@@ -208,6 +216,3 @@ footer
   height: 500px
   background-color: lightgrey
 
-.socialIcons
-  border:1px solid red
-  font-size: 100px 

@@ -49,19 +49,21 @@ export default class Foooter extends Component {
           </div>
 
           <div className="ubication">
+
             <div className="ubicationContent">
-              <section>
+              <section className="contact" >
                 <h3>Contact Us</h3>
                 <h4>010010101</h4>
               </section>
-              <section>
-                <Ionicons  className="socialIcons" icon="ion-social-github"/>
-                <Ionicons className="socialIcons" icon="ion-social-twitter"/>
-                <Ionicons className="socialIcons" icon="ion-social-facebook"/>
+
+              <section className="iconsContent">
+                <Ionicons  className="socialIcons" icon="ion-social-github" color="#f60756" fontSize="30px" />
+                <Ionicons className="socialIcons" icon="ion-social-twitter" color="#f50756" fontSize="30px"  />
+                <Ionicons className="socialIcons" icon="ion-social-facebook" color="#f40756" fontSize="30px" />
               </section>
             </div>
           </div>
-        </div>     
+        </div>
       </footer>
     )
   }
