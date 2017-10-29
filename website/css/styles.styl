@@ -90,37 +90,52 @@ footer
   color : #00aadd
 
   .footerContent
+    border:1px solid red
     flex:1
     display: flex
     flex-direction: column
     justify-content: space-around
 
     .principalContent
+      border:2px solid red
       display:flex
       justify-content: space-around
       align-items: center
       padding: 0 100px 0 100px
+      flex-wrap: wrap
+
+      @media(max-width: 790px)
+        padding: 0
 
       .articulesContent
+        border:3px solid blue
         flex: 1
         display: flex
         justify-content: space-between
         align-items: center
+        flex-wrap: nowrap
+
+        @media(max-width: 760px)
+            flex-direction: row
 
         .footSection
           display: flex
           flex-direction : column
-
+          border:1px solid green
+          width: 120px
+          
           ul
             padding:0
             display:flex
             flex-direction: column
             justify-content: center
             align-items: flex-start
+            
             li
               padding: 0
               margin: 0
               list-style: none
+              
               a
                 font-size: 16px
                 padding: 0
@@ -154,7 +169,7 @@ footer
   width: 300px
   
   .newsContent
-    padding-top:15px
+    padding-top: 15px
     width: 300px
     display: flex
     justify-content: center
@@ -165,11 +180,11 @@ footer
       flex:1
       height : 30px
       color: #f60756
+      font-family: Akrobat-extraBold
 
     .inputStyle:focus 
       outline : none
     
-
     .newsButton
       height: 33px
       color: #ffffff
@@ -192,3 +207,7 @@ footer
   width: 500px
   height: 500px
   background-color: lightgrey
+
+.socialIcons
+  border:1px solid red
+  font-size: 100px 

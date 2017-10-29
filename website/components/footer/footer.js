@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import Newsletter from './newsletter'
+import Ionicons from 'react-ionicons'
 
 export default class Foooter extends Component {
   constructor (props) {
@@ -51,6 +52,12 @@ export default class Foooter extends Component {
             <div className="ubicationContent">
               <section>
                 <h3>Contact Us</h3>
+                <h4>010010101</h4>
+              </section>
+              <section>
+                <Ionicons  className="socialIcons" icon="ion-social-github"/>
+                <Ionicons className="socialIcons" icon="ion-social-twitter"/>
+                <Ionicons className="socialIcons" icon="ion-social-facebook"/>
               </section>
             </div>
           </div>
